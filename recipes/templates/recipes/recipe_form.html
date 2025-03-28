@@ -1,0 +1,14 @@
+<!-- recipes/templates/recipes/recipe_form.html -->
+{% extends "recipes/base.html" %}
+
+{% block title %}Добавить рецепт{% endblock %}
+
+{% block content %}
+<h1>Добавить рецепт</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+<a href="{% url 'home' %}">Назад к списку рецептов</a>
+{% endblock %}

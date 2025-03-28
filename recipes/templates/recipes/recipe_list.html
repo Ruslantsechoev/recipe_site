@@ -1,0 +1,14 @@
+<!-- recipes/templates/recipes/recipe_list.html -->
+{% extends "recipes/base.html" %}
+
+{% block title %}Список рецептов{% endblock %}
+
+{% block content %}
+<h1>Список рецептов</h1>
+<ul>
+    {% for recipe in recipes %}
+    <li><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_recipe' %}">Добавить новый рецепт</a>
+{% endblock %}
